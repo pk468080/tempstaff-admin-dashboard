@@ -1,3 +1,4 @@
+```tsx
 import {
   BrowserRouter,
   Navigate,
@@ -11,6 +12,7 @@ import Workers from './pages/Workers'
 import WorkerDetail from './pages/WorkerDetail'
 import Placeholder from './pages/Placeholder'
 import AdminLayout from './layouts/AdminLayout'
+import AdminGuard from './components/AdminGuard'
 
 export default function App() {
   return (
@@ -23,54 +25,56 @@ export default function App() {
           element={<Login />}
         />
 
-        {/* Admin application */}
-        <Route element={<AdminLayout />}>
+        {/* Protected Admin Application */}
+        <Route element={<AdminGuard />}>
+          <Route element={<AdminLayout />}>
 
-          <Route
-            path="/dashboard"
-            element={<Dashboard />}
-          />
+            <Route
+              path="/dashboard"
+              element={<Dashboard />}
+            />
 
-          <Route
-            path="/bookings"
-            element={<Placeholder />}
-          />
+            <Route
+              path="/bookings"
+              element={<Placeholder />}
+            />
 
-          <Route
-            path="/workers"
-            element={<Workers />}
-          />
+            <Route
+              path="/workers"
+              element={<Workers />}
+            />
 
-          <Route
-            path="/workers/:workerId"
-            element={<WorkerDetail />}
-          />
+            <Route
+              path="/workers/:workerId"
+              element={<WorkerDetail />}
+            />
 
-          <Route
-            path="/customers"
-            element={<Placeholder />}
-          />
+            <Route
+              path="/customers"
+              element={<Placeholder />}
+            />
 
-          <Route
-            path="/services"
-            element={<Placeholder />}
-          />
+            <Route
+              path="/services"
+              element={<Placeholder />}
+            />
 
-          <Route
-            path="/payments"
-            element={<Placeholder />}
-          />
+            <Route
+              path="/payments"
+              element={<Placeholder />}
+            />
 
-          <Route
-            path="/reviews"
-            element={<Placeholder />}
-          />
+            <Route
+              path="/reviews"
+              element={<Placeholder />}
+            />
 
-          <Route
-            path="/notifications"
-            element={<Placeholder />}
-          />
+            <Route
+              path="/notifications"
+              element={<Placeholder />}
+            />
 
+          </Route>
         </Route>
 
         {/* Default */}
@@ -99,3 +103,4 @@ export default function App() {
     </BrowserRouter>
   )
 }
+```
