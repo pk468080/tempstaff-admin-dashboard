@@ -1,4 +1,4 @@
-```tsx
+
 import {
   BrowserRouter,
   Navigate,
@@ -103,4 +103,3 @@ export default function App() {
     </BrowserRouter>
   )
 }
-```

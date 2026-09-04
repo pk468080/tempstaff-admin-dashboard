@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect, useState } from 'react'
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
@@ -100,4 +100,3 @@ const styles: Record<string, React.CSSProperties> = {
     fontFamily: 'system-ui, sans-serif',
   },
 }
-```
