@@ -14,6 +14,9 @@ import Placeholder from './pages/Placeholder'
 import AdminLayout from './layouts/AdminLayout'
 import AdminGuard from './components/AdminGuard'
 import Customers from './pages/Customers'
+import Services from './pages/Services'
+import ServiceAreas from './pages/ServiceAreas'
+import Bookings from './pages/Bookings'
 export default function App() {
   return (
     <BrowserRouter>
@@ -36,7 +39,7 @@ export default function App() {
 
             <Route
               path="/bookings"
-              element={<Placeholder />}
+              element={<Bookings />}
             />
 
             <Route
@@ -56,7 +59,7 @@ export default function App() {
 
             <Route
               path="/services"
-              element={<Placeholder />}
+              element={<Services />}
             />
 
             <Route
@@ -68,7 +71,10 @@ export default function App() {
               path="/reviews"
               element={<Placeholder />}
             />
-
+          <Route
+  path="/service-areas"
+  element={<ServiceAreas />}
+/>
             <Route
               path="/notifications"
               element={<Placeholder />}
