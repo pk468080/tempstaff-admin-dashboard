@@ -25,7 +25,7 @@ type Availability = {
 type Location = {
   latitude: number
   longitude: number
-  created_at: string
+  recorded_at: string
 }
 
 type Job = {
@@ -177,11 +177,11 @@ export default function WorkerDetail() {
         .order('available_from'),
 
       supabase
-        .from('worker_locations')
-        .select('latitude, longitude, created_at')
-        .eq('worker_id', workerId)
-        .order('created_at', { ascending: false })
-        .limit(10),
+  .from('worker_locations')
+  .select('latitude, longitude, recorded_at')
+  .eq('worker_id', workerId)
+  .order('recorded_at', { ascending: false })
+  .limit(10),
 
       supabase
         .from('bookings')
@@ -903,7 +903,7 @@ export default function WorkerDetail() {
                 {location
                   ? 'Profile location'
                   : `Last reported ${formatDate(
-                      latestLocation.created_at
+                      latestLocation.recorded_at
                     )}`}
               </p>
             </div>
@@ -949,7 +949,7 @@ export default function WorkerDetail() {
             <div>
               {locations.slice(0, 5).map(locationItem => (
                 <div
-                  key={locationItem.created_at}
+                  key={locationItem.recorded_at}
                   style={styles.row}
                 >
                   <span>
@@ -958,7 +958,7 @@ export default function WorkerDetail() {
                   </span>
 
                   <span style={styles.muted}>
-                    {formatDate(locationItem.created_at)}
+                    {formatDate(locationItem.recorded_at)}
                   </span>
                 </div>
               ))}
