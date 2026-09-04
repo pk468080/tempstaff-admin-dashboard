@@ -13,7 +13,7 @@ import WorkerDetail from './pages/WorkerDetail'
 import Placeholder from './pages/Placeholder'
 import AdminLayout from './layouts/AdminLayout'
 import AdminGuard from './components/AdminGuard'
-
+import Customers from './pages/Customers'
 export default function App() {
   return (
     <BrowserRouter>
@@ -49,10 +49,10 @@ export default function App() {
               element={<WorkerDetail />}
             />
 
-            <Route
-              path="/customers"
-              element={<Placeholder />}
-            />
+           <Route
+  path="/customers"
+  element={<Customers />}
+/>
 
             <Route
               path="/services"
